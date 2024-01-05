@@ -21,4 +21,4 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-- To test the app, enter the `localhost:8501` (default streamlit port)
+- To test the app, enter the `localhost:8501` (default streamlit port) in the browser
