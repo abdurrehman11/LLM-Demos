@@ -7,7 +7,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
-# from langchain import OpenAI
 from langchain.vectorstores import Pinecone
 from dotenv import load_dotenv
 
@@ -30,11 +29,9 @@ def chunk_data(docs, chunk_size=800, chunk_overlap=50):
 
 docs = read_doc('documents/')
 print(len(docs))
-# print(docs[:2])
 
 texts = chunk_data(docs=docs)
 print(len(texts))
-# print(texts[:2])
 
 
 embeddings = OpenAIEmbeddings(api_key=os.environ['OPENAI_API_KEY'])
@@ -71,7 +68,6 @@ chain = load_qa_chain(llm, chain_type="stuff")
 # Search answers from VectorDB
 def retrieve_answers(query):
     doc_search = retrieve_query(query)
-    print(doc_search)
     response = chain.run(input_documents=doc_search, question=query)
     return response
 
