@@ -26,13 +26,14 @@ streamlit run app.py
 
 ### Q&A using OpenAI embeddings & OpenAI text-davinci model with Pinecone Database
 - Signup & login on `Pinecone` with this link: https://app.pinecone.io/
+- Singup on OpenAI website and create an `API key` and copy the that API key.
 
 - Goto project dir `openai-question-answer` and run all the following commands from project dir,
 ```bash 
 cd llama2-product-description
 ```
-
-- create a dir `documents` and put your relevant PDF documents inside this dir
+- Create a `.env` file and put the API key in this file as `OPENAI_API_KEY="your_OpenAI_api_key"`
+- Create a dir `documents` and put your relevant PDF documents inside this dir
 
 - Run the below command to Install dependencies,
 ```bash 
