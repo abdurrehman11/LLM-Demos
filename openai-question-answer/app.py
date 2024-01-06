@@ -67,11 +67,17 @@ chain = load_qa_chain(llm, chain_type="stuff")
 
 # Search answers from VectorDB
 def retrieve_answers(query):
-    doc_search = retrieve_query(query)
+    doc_search = retrieve_query(query, topk=3)
+    # print(doc_search)
     response = chain.run(input_documents=doc_search, question=query)
     return response
 
 
-our_query = "How much the agriculture target will be increased by how many crore?"
-answer = retrieve_answers(our_query)
-print(answer)
+# since I tested it on my resume but you can test it with any docs and ask queries relevant
+# to your documents.
+query1 = "Give me a list MLOPS specific skills from the given docs"
+query2 = "Which MLOPS specific skills from the given docs that candidate possess?"
+
+answer = retrieve_answers(query2)
+print(f"Q# {query2}")
+print(f"Ans: {answer}")

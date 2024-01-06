@@ -22,3 +22,24 @@ streamlit run app.py
 ```
 
 - To test the app, enter the `localhost:8501` (default streamlit port) in the browser
+
+
+### Q&A using OpenAI embeddings & OpenAI text-davinci model with Pinecone Database
+- Signup & login on `Pinecone` with this link: https://app.pinecone.io/
+
+- Goto project dir `openai-question-answer` and run all the following commands from project dir,
+```bash 
+cd llama2-product-description
+```
+
+- create a dir `documents` and put your relevant PDF documents inside this dir
+
+- Run the below command to Install dependencies,
+```bash 
+pip install -r requirements.txt 
+```
+
+- To run the project, run the below command dir,
+```bash 
+python3 app.py
+```
